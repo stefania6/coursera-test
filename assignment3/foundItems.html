@@ -1,0 +1,29 @@
+<table style="width: 100%; height: 100%" ng-if="myController.items.length > 0" ng-repeat="item in myController.items">
+  <thead style="font-weight: bold">
+    <td>
+      Name
+    </td>
+    <td>
+      Short name
+    </td>
+    <td>
+     Description
+    </td>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {{ item.name }}
+      </td>
+      <td>
+        {{ item.short_name }}
+      </td>
+      <td>
+       {{ item.description }}
+      </td>
+      <td>
+        <button ng-click="myController.onRemove({index: $index});">Don't want this one!</button>
+      </td>
+    </tr>
+</table>
+<div ng-if="myController.nothingFound()">Nothing found</div>
