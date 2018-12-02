@@ -40,7 +40,6 @@
             method: "GET",
             url: (ApiBasePath + "/menu_items.json")
           }).then(function(result) {
-            debugger;
             var resultedItems = result.data.menu_items;
 
             for (var i = 0; i < resultedItems.length; i++){
