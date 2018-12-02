@@ -40,6 +40,7 @@
             method: "GET",
             url: (ApiBasePath + "/menu_items.json")
           }).then(function(result) {
+            debugger;
             var resultedItems = result.data.menu_items;
 
             for (var i = 0; i < resultedItems.length; i++){
@@ -48,9 +49,8 @@
                 if (descriptionToLowerCase.indexOf(searchTerm.toLowerCase()) >= 0){
                   foundItems.push(resultedItems[i]);
                 }
-
-                return foundItems;
             }
+            return foundItems;
           }).catch(function(error) {
             console.log("Error inside service!");
           });
@@ -62,7 +62,8 @@
       templateUrl: 'foundItems.html',
       scope: {
         items: '<',
-        onRemove: '&'
+        onRemove: '&',
+        message: '<'
       },
       controller: FoundItemsDirectiveCtrl,
       controllerAs: 'myController',
