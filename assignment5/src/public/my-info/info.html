@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+        <div ng-show="this.signedUp">
+            <h1>User information</h1>
+            <p>First name: {{ this.user.firstName }}</p>
+            <p>Last name: {{ this.user.lastName }}</p>
+            <p>Email: {{ this.user.email }}</p>
+            <p>Phone: {{ this.user.phone }}</p>
+        </div>
+
+        <div ng-hide="this.signedUp">
+            <h2>Not Signed Up Yet. <a class="btn btn-default" ui-sref="public.signup">Sign up now!</a></h2>
+        </div>
+    </div>
+</div>
